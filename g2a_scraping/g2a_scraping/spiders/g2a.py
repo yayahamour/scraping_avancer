@@ -11,7 +11,7 @@ class G2aSpider(CrawlSpider):
 
     rules = (
         Rule(LinkExtractor(restrict_xpaths=['//li[@class = "indexes__ProductCardStyledWrapper-wklrsw-118 indexes__ProductCardBigStyledWrapper-wklrsw-119 dJMasQ ejjnIN pc-digital pc-hover"]/div/a']), callback='parse_item', follow=True),
-        #Rule(LinkExtractor(restrict_xpaths=['//nav[@class = "indexes__StyledNavigation-wklrsw-73 fExopu"]/ul/li/a']),follow=True),
+        Rule(LinkExtractor(restrict_xpaths=['//nav[@class = "indexes__StyledNavigation-wklrsw-73 fExopu"]/ul/li/a']),follow=True),
      )
     def parse_item(self, response):
         item = G2AScrapingItem()

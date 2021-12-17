@@ -12,7 +12,7 @@ class InstantGamingSpider(CrawlSpider):
 
     rules = (
         Rule(LinkExtractor(restrict_xpaths=['//div[@class="item force-badge"]/a']), callback='parse_item', follow=True),
-        #Rule(LinkExtractor(restrict_xpaths=['//ul[@class="pagination bottom"]/li/a']),follow=True),
+        Rule(LinkExtractor(restrict_xpaths=['//ul[@class="pagination bottom"]/li/a']),follow=True),
     )
 
     def parse_item(self, response):
